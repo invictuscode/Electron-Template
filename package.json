@@ -1,0 +1,40 @@
+{
+  "name": "app-name",
+  "version": "1.0.0",
+  "description": "some random app",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron .",
+    "build":"electron-builder"
+  },
+"build":{
+  "appId":"app-name",
+  "win":{
+    "target": [
+      "nsis"
+    ],
+    "icon":"icon.ico"
+  },
+  "nsis": {
+    
+    "installerIcon":"icon.ico",
+    "uninstallerIcon":"icon.ico",
+    "uninstallDisplayName":"app-name",
+    "liscence":"liscense.md",
+    "allowToChangeInstallationDirectory":false
+    
+  }
+},
+
+  "author": "developer",
+  "license": "MIT",
+  "dependencies": {
+    
+    "electron-squirrel-startup": "^1.0.0",
+    "pkg": "^5.5.1"
+  },
+  "devDependencies": {
+    "electron":"^16.0.5",
+    "electron-builder": "^22.11.7"
+  }
+}

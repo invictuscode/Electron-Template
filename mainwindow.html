@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+<link href="aaidelogo.png" rel="shortcut icon" type="image/x-icon">
+<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+   <title>AA-IDE</title>
+    <style>
+     body{
+       background-color: black;
+        color: white;
+       }
+
+     .segoeui-font{
+        font-family: 'Segoe UI';
+     }
+     
+</style>
+</head>
+ <body>
+
+ <textarea placeholder="Type your code here" id="textbox" style="font-family:  'Consolas'; color: black; height: 400px; width: 550px;" value="YOUR CODE"></textarea>
+ <br>
+
+ <span>
+ <input type="submit" value="Run Program" id="button" style="font-size: 25px;"  onclick="giveResponse()" class="segoeui-font" id="saveButton()">
+ 
+ <input type="submit" id="savecode" class="segoeui-font" style="font-size: 25px;" value="Run Another Program">
+ </span>
+
+ <script>
+  var saveButton = document.getElementById("button")
+  var textbox = document.getElementById("textbox")
+  
+  saveButton.addEventListener("click", function(){
+    localStorage.name = textbox.value;
+    window.location.href="mainwindow.html"
+  })
+
+  document.write("<br><br>Code Output:")
+  document.write("<br>" + localStorage.name)
+
+  var code2 = document.getElementById("savecode")
+  var textvalue = document.getElementById("textbox")
+  code2.addEventListener("click", function(){
+    localStorage.name2 = textvalue.value;
+    window.location.href="mainwindow.html"
+  })
+
+  document.write("<br>Second Code Output:")
+  document.write("<br>" + localStorage.name2)
+</script>
+
+<div id="messages"></div>
+
+<script src="chatbot.js"></script>
+ </body>
+</html>
